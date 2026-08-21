@@ -1,0 +1,24 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+
+    ports:
+      - "8096:8096/tcp"
+      - "7359:7359/udp"
+
+    environment:
+      TZ: "Asia/Kolkata"
+
+    volumes:
+      # Jellyfin configuration
+      - ./data/config:/config
+
+      # Cache
+      - ./data/cache:/cache
+
+      # Media library
+      # Change this path to your actual NAS media location
+      - /mnt/storage/media:/media:ro
+
+    restart: unless-stopped
