@@ -1,0 +1,17 @@
+services:
+  unbound:
+    image: madnuttah/unbound:latest
+    container_name: unbound
+
+    restart: unless-stopped
+
+    volumes:
+      - ./config:/usr/local/unbound
+      - ./data:/var/lib/unbound
+
+    networks:
+      - dns
+
+networks:
+  dns:
+    external: true
