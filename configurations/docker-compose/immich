@@ -1,0 +1,21 @@
+# Immich configuration
+
+# Location where Immich stores uploaded photos/videos
+UPLOAD_LOCATION=/mnt/storage/photos
+
+# PostgreSQL database location
+# Keep this on local SSD storage.
+DB_DATA_LOCATION=/mnt/nvme/immich-postgres
+
+# Timezone
+TZ=Asia/Kolkata
+
+# Immich image version
+IMMICH_VERSION=v3
+
+# Database credentials
+# NEVER use real credentials in GitHub.
+DB_PASSWORD=CHANGE_ME
+
+DB_USERNAME=postgres
+DB_DATABASE_NAME=immich
